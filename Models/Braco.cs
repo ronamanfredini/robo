@@ -3,17 +3,25 @@
     public class Braco
     {
         public enum Lados { esquerdo, direito };
-
+       
         public Lados lado;
 
-        public readonly Cotovelo cotovelo;
+        public Cotovelo cotovelo { get; }
 
-        public readonly Pulso pulso;
+        public Pulso pulso { get; }
         public Braco(Lados lado)
         {
             this.lado = lado;
-             pulso = new Pulso();
+            pulso = new Pulso();
             cotovelo = new Cotovelo();
+        }
+
+        public bool MoverPulso(Componente.Movimentos movimento)
+        {
+            if (cotovelo.EstadoAtual == Cotovelo.STATE_FORTEMENTE_CONTRAIDO)
+                return pulso.Mover(movimento);
+
+            return false;
         }
     }
 }

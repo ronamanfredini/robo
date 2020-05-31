@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace robo.Models
+﻿namespace robo.Models
 {
     public class Cabeca : Componente
     {
+        public static string STATE_ROTACAO_MENOS_90 = "Rotação -90º";
+        public static string STATE_ROTACAO_MENOS_45 = "Rotação -45º";
+
         public readonly string[] inclinacoes = { "Para Cima", "Em Repouso", "Para Baixo" };
-        public int inclinacaoAtual { get; set; }
-        public Cabeca() : base(new string[3] { "Rotação -90º", "Rotação -45º", "Em Repouso" })
+        protected int inclinacaoAtualIndex { get; set; }
+
+        public string InclinacaoAtual => inclinacoes[inclinacaoAtualIndex];
+        public Cabeca() : base(new string[3] { STATE_ROTACAO_MENOS_90, STATE_ROTACAO_MENOS_45, STATE_REPOUSO})
         {
-            this.estadoAtual = 2;
-            this.inclinacaoAtual = 1;
+            this.estadoAtualIndex = 2;
+            this.inclinacaoAtualIndex = 1;
         }
 
         public bool AlterarInclinacao()
