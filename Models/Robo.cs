@@ -18,16 +18,16 @@
             switch (movimento.parte)
             {
                 case "cabeca":
-                    resultado = cabeca.Mover(movimento.direcao);
+                    resultado = cabeca.Mover(movimento.direcao, movimento.tipo);
                     break;
                 case "bracoDireito.cotovelo":
-                    resultado = bracoDireito.cotovelo.Mover(movimento.direcao);
+                    resultado = bracoDireito.cotovelo.Mover(movimento.direcao, movimento.tipo);
                     break;
                 case "bracoDireito.pulso":
                     resultado = bracoDireito.MoverPulso(movimento.direcao);
                     break;
                 case "bracoEsquerdo.cotovelo":
-                    resultado = bracoEsquerdo.cotovelo.Mover(movimento.direcao);
+                    resultado = bracoEsquerdo.cotovelo.Mover(movimento.direcao, movimento.tipo);
                     break;
                 case "bracoEsquerdo.pulso":
                     resultado = bracoEsquerdo.MoverPulso(movimento.direcao);

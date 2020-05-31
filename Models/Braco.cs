@@ -5,9 +5,7 @@
         public enum Lados { esquerdo, direito };
        
         public Lados lado;
-
         public Cotovelo cotovelo { get; }
-
         public Pulso pulso { get; }
         public Braco(Lados lado)
         {
@@ -19,7 +17,7 @@
         public bool MoverPulso(Componente.Movimentos movimento)
         {
             if (cotovelo.EstadoAtual == Cotovelo.STATE_FORTEMENTE_CONTRAIDO)
-                return pulso.Mover(movimento);
+                return pulso.Mover(movimento, Movimento.Tipo.posicao);
 
             return false;
         }

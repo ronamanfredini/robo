@@ -4,21 +4,16 @@
     {
         public static string STATE_ROTACAO_MENOS_90 = "Rotação -90º";
         public static string STATE_ROTACAO_MENOS_45 = "Rotação -45º";
-
-        public readonly string[] inclinacoes = { "Para Cima", "Em Repouso", "Para Baixo" };
-        protected int inclinacaoAtualIndex { get; set; }
-
-        public string InclinacaoAtual => inclinacoes[inclinacaoAtualIndex];
         public Cabeca() : base(new string[3] { STATE_ROTACAO_MENOS_90, STATE_ROTACAO_MENOS_45, STATE_REPOUSO})
         {
-            this.estadoAtualIndex = 2;
-            this.inclinacaoAtualIndex = 1;
+            estadoAtualIndex = 2; inclinacaoAtualIndex = 1;
         }
 
-        public bool AlterarInclinacao()
+        public override bool Mover(Movimentos movimento, Movimento.Tipo tipo)
         {
-
-            return true;
+            if (tipo == Movimento.Tipo.posicao && InclinacaoAtual != STATE_REPOUSO)
+                throw new System.Exception("Movimento não pode ser realizado fora da inclinação " + STATE_REPOUSO);
+            return base.Mover(movimento, tipo);
         }
     }
 }

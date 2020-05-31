@@ -25,8 +25,15 @@ namespace robo.Controllers
         public ResponseWrapper<Robo> Patch(Movimento movimento)
         {
             Robo roboSessao = _servicosGlobais.Value.robo;
-            roboSessao.ResolverMovimento(movimento);
-            return new ResponseWrapper<Robo>() { records = roboSessao };
+            try
+            {
+                roboSessao.ResolverMovimento(movimento);
+                return new ResponseWrapper<Robo>() { records = roboSessao };
+            }
+            catch (System.Exception e)
+            {
+                return new ResponseWrapper<Robo>() { records = roboSessao, message = e.Message, success = false };
+            }
         }
     }
 }
