@@ -12,8 +12,8 @@
 
         public override bool Mover(Movimentos movimento, Movimento.Tipo tipo)
         {
-            if (tipo == Movimento.Tipo.posicao && InclinacaoAtual != STATE_REPOUSO)
-                throw new System.Exception("Movimento não pode ser realizado fora da inclinação " + STATE_REPOUSO);
+            if (tipo == Movimento.Tipo.posicao && InclinacaoAtual == STATE_INCLINACAO_PARA_BAIXO)
+                throw new System.Exception("Movimento não pode ser realizado na inclinação " + STATE_INCLINACAO_PARA_BAIXO);
             return base.Mover(movimento, tipo);
         }
     }

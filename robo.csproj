@@ -37,6 +37,8 @@
     <None Remove="ClientApp\src\models\robo.ts" />
     <None Remove="ClientApp\src\services\robo.service.ts" />
     <None Remove="ClientApp\src\services\stateChanger.ts" />
+    <None Remove="ClientApp\src\utils\baseRequest.js" />
+    <None Remove="ClientApp\src\utils\baseRequest.js.map" />
     <None Remove="ClientApp\src\utils\baseRequest.ts" />
     <None Remove="ClientApp\src\utils\baseResponse.ts" />
   </ItemGroup>
@@ -55,7 +57,6 @@
     <TypeScriptCompile Include="ClientApp\src\models\robo.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\robo.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\stateChanger.ts" />
-    <TypeScriptCompile Include="ClientApp\src\utils\baseRequest.ts" />
     <TypeScriptCompile Include="ClientApp\src\utils\baseResponse.ts" />
   </ItemGroup>
 
