@@ -7,6 +7,7 @@
         public Cabeca() : base(new string[3] { STATE_ROTACAO_MENOS_90, STATE_ROTACAO_MENOS_45, STATE_REPOUSO})
         {
             estadoAtualIndex = 2; inclinacaoAtualIndex = 1;
+            id = "cabeca";
         }
 
         public override bool Mover(Movimentos movimento, Movimento.Tipo tipo)

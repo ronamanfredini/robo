@@ -1,6 +1,6 @@
 ﻿namespace robo.Utils
 {
-    public class ResponseWrapper<T>
+    public class BaseResponse<T>
     {
         public T records { get; set; }
 

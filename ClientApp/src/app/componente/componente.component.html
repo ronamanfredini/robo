@@ -1,0 +1,5 @@
+<h1>{{ nome }}<span *ngIf="!noButtons"> - {{ componente.estadoAtual }}</span></h1>
+<div *ngIf="!noButtons">
+  <button (click)="alterarEstado(0, 0)">Retroceder Posição</button>
+  <button (click)="alterarEstado(1, 0)">Avançar Posição</button>
+</div>

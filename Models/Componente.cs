@@ -15,6 +15,8 @@ namespace robo.Models
         protected int estadoAtualIndex { get; set; }
 
         public string[] estados;
+
+        public string id { get; set; }
         public string EstadoAtual => estados[estadoAtualIndex];
         
         public Componente() {}

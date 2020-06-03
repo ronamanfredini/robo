@@ -16,23 +16,23 @@ namespace robo.Controllers
         }
 
         [HttpGet]
-        public ResponseWrapper<Robo> Get()
+        public BaseResponse<Robo> Get()
         {
-            return new ResponseWrapper<Robo>() { records = _servicosGlobais.Value.robo };
+            return new BaseResponse<Robo>() { records = _servicosGlobais.Value.robo };
         }
 
         [HttpPatch]
-        public ResponseWrapper<Robo> Patch(Movimento movimento)
+        public BaseResponse<Robo> Patch(Movimento movimento)
         {
             Robo roboSessao = _servicosGlobais.Value.robo;
             try
             {
                 roboSessao.ResolverMovimento(movimento);
-                return new ResponseWrapper<Robo>() { records = roboSessao };
+                return new BaseResponse<Robo>() { records = roboSessao };
             }
             catch (System.Exception e)
             {
-                return new ResponseWrapper<Robo>() { records = roboSessao, message = e.Message, success = false };
+                return new BaseResponse<Robo>() { records = roboSessao, message = e.Message, success = false };
             }
         }
     }

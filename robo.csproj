@@ -23,6 +23,42 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\braco\braco.component.ts" />
+    <None Remove="ClientApp\src\app\braco\braco.module.ts" />
+    <None Remove="ClientApp\src\app\componente\componente.component.ts" />
+    <None Remove="ClientApp\src\app\componente\componente.module.ts" />
+    <None Remove="ClientApp\src\app\home\home.module.ts" />
+    <None Remove="ClientApp\src\models\braco.ts" />
+    <None Remove="ClientApp\src\models\cabeca.ts" />
+    <None Remove="ClientApp\src\models\componente.ts" />
+    <None Remove="ClientApp\src\models\cotovelo.ts" />
+    <None Remove="ClientApp\src\models\pulso.ts" />
+    <None Remove="ClientApp\src\models\robo.ts" />
+    <None Remove="ClientApp\src\services\robo.service.ts" />
+    <None Remove="ClientApp\src\services\stateChanger.ts" />
+    <None Remove="ClientApp\src\utils\baseRequest.ts" />
+    <None Remove="ClientApp\src\utils\baseResponse.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\braco\braco.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\braco\braco.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\componente\componente.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\componente\componente.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\home.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\braco.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\cabeca.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\componente.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\cotovelo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\pulso.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\robo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\robo.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\stateChanger.ts" />
+    <TypeScriptCompile Include="ClientApp\src\utils\baseRequest.ts" />
+    <TypeScriptCompile Include="ClientApp\src\utils\baseResponse.ts" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
@@ -50,5 +86,4 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
-
 </Project>
